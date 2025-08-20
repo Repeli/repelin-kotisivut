@@ -1,0 +1,28 @@
+:root { --bg: #0b0c10; --fg: #e5e7eb; --muted: #9ca3af; --brand: #6366f1; --card: #111217; }
+:root.light { --bg: #ffffff; --fg: #0b0c10; --muted: #4b5563; --brand: #4f46e5; --card: #f3f4f6; }
+/* Why: CSS variables enable fast theme switching without JS-heavy re-renders. */
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--fg); line-height: 1.6; }
+
+
+.container { max-width: 960px; margin: 0 auto; padding: 2rem; }
+.site-header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in oklab, var(--bg), transparent 60%); border-bottom: 1px solid color-mix(in oklab, var(--fg), transparent 88%); }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1rem; }
+.brand { color: var(--fg); text-decoration: none; font-weight: 700; letter-spacing: .2px; }
+
+
+.btn { border: 1px solid color-mix(in oklab, var(--fg), transparent 70%); background: transparent; color: var(--fg); padding: .5rem .75rem; border-radius: .75rem; cursor: pointer; }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: white; }
+.btn:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+
+.hero { display: grid; gap: .75rem; padding: 3rem 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.card { background: var(--card); border: 1px solid color-mix(in oklab, var(--fg), transparent 88%); border-radius: 1rem; padding: 1rem; }
+.site-footer { border-top: 1px solid color-mix(in oklab, var(--fg), transparent 88%); padding: 1.5rem; text-align: center; color: var(--muted); }
+
+
+@media (prefers-color-scheme: light) { :root:not(.light) { /* Why: Respect user OS preference by default. */ } }
