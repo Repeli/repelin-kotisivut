@@ -24,5 +24,14 @@ body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-
 .card { background: var(--card); border: 1px solid color-mix(in oklab, var(--fg), transparent 88%); border-radius: 1rem; padding: 1rem; }
 .site-footer { border-top: 1px solid color-mix(in oklab, var(--fg), transparent 88%); padding: 1.5rem; text-align: center; color: var(--muted); }
 
+.video-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+video {
+  border-radius: 1rem;
+  max-width: 100%;
+  height: auto;
+}
 
 @media (prefers-color-scheme: light) { :root:not(.light) { /* Why: Respect user OS preference by default. */ } }
