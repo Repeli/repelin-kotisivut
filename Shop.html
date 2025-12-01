@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shop</title>
+<title>Shop </title>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,23 +16,25 @@
 <li><a href="Shop.html">&quot;Shop&quot;</a></li>
 <li><a href="Contact me">Contact me</a></li>
 </ul>
+<button id="themeToggle" class="btn" aria-label="Toggle theme">🌓</button>
 </nav>
 </header>
 
 
 <main class="container">
-<h1>Osaamiskauppa</h1>
-<p>Valitse kategoria nähdäksesi siihen liittyvät taidot.</p>
+<h1>Skill shop</h1>
+<p>Select a category to see the skills</p>
 
 
 <section class="shop-grid">
-<div class="category" data-category="product-mgmt">Tuotepäälliköinti</div>
-<div class="category" data-category="product-dev">Tuotekehtiys</div>
-<div class="category" data-category="agile">Ketterät menetelmät</div>
-<div class="category" data-category="coaching">Tiimivalmennus</div>
-<div class="category" data-category="project-mgmt">Projektinhallinta</div>
-<div class="category" data-category="personality">Persoonallisuus</div>
-<div class="category" data-category="tools">Työkalut</div>
+<div class="category" data-category="product-mgmt">Product management</div>
+<div class="category" data-category="product-dev">Product development</div>
+<div class="category" data-category="agile">Agile methods</div>
+<div class="category" data-category="coaching">Team coaching</div>
+<div class="category" data-category="project-mgmt">Project management</div>
+<div class="category" data-category="personality">Personality</div>
+<div class="category" data-category="tools">Tools</div>
+<div class="category" data-category="Artificial intelligence">AI</div>
 </section>
 
 
@@ -42,12 +44,12 @@
 
 <script>
 const skills = {
-"product-mgmt": ["Roadmapping", "Priorisointi", "Tuotevisio", "Feature-suunnittelu"],
-"product-dev": ["Kehitysprosessit", "MVP-ajattelu", "Iterointi", "Laadunvarmistus"],
-"agile": ["Scrum", "Kanban", "Lean", "Retrot"],
-"coaching": ["Fasilitointi", "Tiimidynamiikka", "Mentorointi", "Motivointi"],
-"project-mgmt": ["Aikataulutus", "Riskienhallinta", "Budjetointi", "Stakeholder-viestintä"],
-"personality": ["Oppimiskyky", "Empatia", "Rohkeus", "Luovuus"],
+"product-mgmt": ["Roadmapping", "Priorization", "Product vision", "Feature planning"],
+"product-dev": ["Development processes", "MVP mindset", "Iteration", "Quality assurance"],
+"agile": ["Scrum", "Kanban", "Lean", "SAFe", "Retrospectives"],
+"coaching": ["Facilitation", "Team dynamic", "Mentoring", "Motivating"],
+"project-mgmt": ["Time management", "Risk management", "Budgeting", "Stakeholder communication"],
+"personality": ["Eager to learn", "Empathy", "Can do attitude", "Out of the box thinking", "Creativity"],
 "tools": ["Jira", "Figma", "Confluence", "GitHub"]
 };
 
@@ -62,11 +64,16 @@ const container = document.getElementById('items');
 container.innerHTML = list.map(skill => `
 <div class="card">
 <h3>${skill}</h3>
-<button class="btn primary">Lisää koriin</button>
+<button class="btn primary">Add to cart</button>
 </div>
 `).join('');
 });
 });
 </script>
+<footer class="site-footer">
+<small>© <span id="year"></span> Sami Siitari. All rights reserved.</small>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
