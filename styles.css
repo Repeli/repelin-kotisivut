@@ -33,5 +33,25 @@ video {
   max-width: 100%;
   height: auto;
 }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;        /* space between tabs */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  padding: .4rem .6rem;
+  border-radius: .5rem;
+  transition: background 0.2s;
+}
+
+.nav-links a:hover {
+  background: color-mix(in oklab, var(--fg), transparent 85%);
+}
 
 @media (prefers-color-scheme: light) { :root:not(.light) { /* Why: Respect user OS preference by default. */ } }
