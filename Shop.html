@@ -1,0 +1,72 @@
+<!-- File: shop.html -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+<nav class="nav container">
+<a href="index.html" class="brand">Samin kotisivut</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="Shop.html">&quot;Shop&quot;</a></li>
+<li><a href="Contact me">Contact me</a></li>
+</ul>
+</nav>
+</header>
+
+
+<main class="container">
+<h1>Osaamiskauppa</h1>
+<p>Valitse kategoria nähdäksesi siihen liittyvät taidot.</p>
+
+
+<section class="shop-grid">
+<div class="category" data-category="product-mgmt">Tuotepäälliköinti</div>
+<div class="category" data-category="product-dev">Tuotekehtiys</div>
+<div class="category" data-category="agile">Ketterät menetelmät</div>
+<div class="category" data-category="coaching">Tiimivalmennus</div>
+<div class="category" data-category="project-mgmt">Projektinhallinta</div>
+<div class="category" data-category="personality">Persoonallisuus</div>
+<div class="category" data-category="tools">Työkalut</div>
+</section>
+
+
+<section id="items" class="items-grid"></section>
+</main>
+
+
+<script>
+const skills = {
+"product-mgmt": ["Roadmapping", "Priorisointi", "Tuotevisio", "Feature-suunnittelu"],
+"product-dev": ["Kehitysprosessit", "MVP-ajattelu", "Iterointi", "Laadunvarmistus"],
+"agile": ["Scrum", "Kanban", "Lean", "Retrot"],
+"coaching": ["Fasilitointi", "Tiimidynamiikka", "Mentorointi", "Motivointi"],
+"project-mgmt": ["Aikataulutus", "Riskienhallinta", "Budjetointi", "Stakeholder-viestintä"],
+"personality": ["Oppimiskyky", "Empatia", "Rohkeus", "Luovuus"],
+"tools": ["Jira", "Figma", "Confluence", "GitHub"]
+};
+
+
+document.querySelectorAll('.category').forEach(cat => {
+cat.addEventListener('click', () => {
+const type = cat.dataset.category;
+const list = skills[type] || [];
+const container = document.getElementById('items');
+
+
+container.innerHTML = list.map(skill => `
+<div class="card">
+<h3>${skill}</h3>
+<button class="btn primary">Lisää koriin</button>
+</div>
+`).join('');
+});
+});
+</script>
+</body>
+</html>
