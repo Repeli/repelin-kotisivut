@@ -9,7 +9,16 @@
 --xmas-bg: #0a0f1f;
 }
 
-
+.video-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+video {
+  border-radius: 1rem;
+  max-width: 100%;
+  height: auto;
+}
+.hero { display: grid; gap: .75rem; padding: 3rem 0; }
 body {
 margin: 0;
 font-family: "Segoe UI", sans-serif;
