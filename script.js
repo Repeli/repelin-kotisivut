@@ -15,7 +15,7 @@ root.classList.toggle("light", toLight);
 localStorage.setItem("theme", toLight ? "light" : "dark");
 });
 function secretAccess() {
-    const answer = prompt("Joulukalenterin tuoja?:");
+    const answer = prompt("Kuka asuntoa tarkkailee ja tutkii ja päivittäin jurtaanin suun makealla tukkii?");
 
     // Accept multiple correct answers
     const correctAnswers = ["Nisse", "nisse"];
