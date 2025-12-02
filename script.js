@@ -17,12 +17,68 @@ localStorage.setItem("theme", toLight ? "light" : "dark");
 function secretAccess() {
     const answer = prompt("Joulukalenterin tuoja?:");
 
-    // Set the required answer here
-    const correctAnswer = "Nisse" || "nisse"; // example password
+    // Accept multiple correct answers
+    const correctAnswers = ["Nisse", "nisse"];
 
-    if (answer === correctAnswer) {
-        window.location.href = "piilosivu.html"; // or your secret video page
+    if (correctAnswers.includes(answer)) {
+        window.location.href = "piilosivu.html";
     } else if (answer !== null) {
         alert("Eipä ollunna.");
     }
 }
+// ❄️ Snow animation
+const canvas = document.getElementById("snowCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let flakes = [];
+
+for (let i = 0; i < 120; i++) {
+    flakes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 3 + 1,
+        d: Math.random() + 1
+    });
+}
+
+function drawSnow() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+
+    for (let i = 0; i < flakes.length; i++) {
+        let f = flakes[i];
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+    }
+
+    ctx.fill();
+    updateSnow();
+}
+
+let angle = 0;
+
+function updateSnow() {
+    angle += 0.001;
+
+    for (let i = 0; i < flakes.length; i++) {
+        let f = flakes[i];
+
+        f.y += Math.pow(f.d, 2) + 1;
+        f.x += Math.sin(angle) * 2;
+
+        if (f.y > canvas.height) {
+            flakes[i] = {
+                x: Math.random() * canvas.width,
+                y: 0,
+                r: f.r,
+                d: f.d
+            };
+        }
+    }
+}
+
+setInterval(drawSnow, 33);
