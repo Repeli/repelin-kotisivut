@@ -14,3 +14,15 @@ const toLight = !root.classList.contains("light");
 root.classList.toggle("light", toLight);
 localStorage.setItem("theme", toLight ? "light" : "dark");
 });
+function secretAccess() {
+    const answer = prompt("Joulukalenterin tuoja?:");
+
+    // Set the required answer here
+    const correctAnswer = "Nisse" || "nisse"; // example password
+
+    if (answer === correctAnswer) {
+        window.location.href = "piilosivu.html"; // or your secret video page
+    } else if (answer !== null) {
+        alert("Eipä ollunna.");
+    }
+}

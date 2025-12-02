@@ -1,0 +1,125 @@
+/* File: christmas.css */
+
+
+:root {
+--xmas-red: #d62828;
+--xmas-green: #2b9348;
+--xmas-gold: #ffdd57;
+--xmas-white: #ffffff;
+--xmas-bg: #0a0f1f;
+}
+
+
+body {
+margin: 0;
+font-family: "Segoe UI", sans-serif;
+background: var(--xmas-bg);
+color: var(--xmas-white);
+overflow-x: hidden; /* why: prevent scroll from snowfall */
+}
+
+
+/* Header */
+.xmas-header {
+text-align: center;
+padding: 2rem;
+background: linear-gradient(90deg, var(--xmas-red), var(--xmas-green));
+color: var(--xmas-white);
+font-size: 2rem;
+font-weight: 700;
+box-shadow: 0 0 20px var(--xmas-red);
+}
+
+
+/* Content */
+.xmas-content {
+max-width: 900px;
+margin: auto;
+padding: 2rem;
+text-align: center;
+}
+
+
+.welcome h2 {
+color: var(--xmas-gold);
+font-size: 1.8rem;
+}
+
+
+/* Cards */
+.xmas-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1.5rem;
+margin-top: 2rem;
+}
+
+
+.xmas-card {
+background: rgba(255, 255, 255, 0.08);
+border: 2px solid var(--xmas-red);
+padding: 1.5rem;
+border-radius: 1rem;
+font-size: 1.3rem;
+transition: transform 0.2s, box-shadow 0.3s;
+}
+
+
+.xmas-card:hover {
+transform: scale(1.05);
+box-shadow: 0 0 15px var(--xmas-gold);
+cursor: pointer;
+}
+
+
+/* Footer */
+.xmas-footer {
+text-align: center;
+padding: 1.5rem;
+margin-top: 3rem;
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+color: var(--xmas-gold);
+}
+
+
+/* Snowfall Animation */
+@keyframes snow {
+0% { transform: translateY(-10vh); }
+100% { transform: translateY(100vh); }
+}
+
+.hidden-secret-link {
+    position: fixed;
+    bottom: 20px;        /* adjust position */
+    right: 20px;
+    width: 40px;         /* size of clickable area */
+    height: 40px;
+    display: block;
+    cursor: pointer;
+
+    /* keep it invisible */
+    opacity: 0;
+}
+.hidden-secret-link:hover {
+    opacity: 0.2; /* optional: slight hint on hover */
+}
+
+.hidden-secret-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.snowflake {
+position: fixed;
+top: -10vh;
+color: var(--xmas-white);
+font-size: 1rem;
+animation: snow linear infinite;
+opacity: 0.9;
+user-select: none;
+}
