@@ -82,3 +82,27 @@ function updateSnow() {
 }
 
 setInterval(drawSnow, 33);
+// Sparkle effect for hidden link
+const secretLink = document.getElementById("secretLink");
+let sparkleActive = false;
+
+function createSparkle(x, y) {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.left = `${x}px`;
+    sparkle.style.top = `${y}px`;
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => sparkle.remove(), 700);
+}
+
+if (secretLink) {
+    secretLink.addEventListener("mouseenter", () => sparkleActive = true);
+    secretLink.addEventListener("mouseleave", () => sparkleActive = false);
+
+    document.addEventListener("mousemove", (e) => {
+        if (sparkleActive) {
+            createSparkle(e.pageX, e.pageY);
+        }
+    });
+}
