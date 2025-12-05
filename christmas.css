@@ -101,7 +101,7 @@ color: var(--xmas-gold);
     position: fixed;
     bottom: 20px;        /* adjust position */
     right: 20px;
-    width: 40px;         /* size of clickable area */
+    width: 30px;         /* size of clickable area */
     height: 40px;
     display: block;
     cursor: pointer;
@@ -122,6 +122,16 @@ color: var(--xmas-gold);
     opacity: 0;
     cursor: pointer;
     z-index: 9999;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .snowflake {
