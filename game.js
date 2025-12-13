@@ -104,14 +104,6 @@ localStorage.setItem("lahjamysteeri_progress", JSON.stringify(progress));
 }
 
 
-function renderProgress() {
-const el = document.getElementById("progress");
-if (!el) return;
-const count = getProgress().length;
-el.textContent = `Kirjaimia kerätty: ${count} / ${TOTAL_PAGES}`;
-}
-
-
 // === Modal system ===
 const modal = document.createElement("div");
 modal.innerHTML = `

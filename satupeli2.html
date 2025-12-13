@@ -4,18 +4,25 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Lahjamysteeri!</title>
-<link rel="stylesheet" href="game.css" />
+<link rel="stylesheet" href="christmas.css" />
 </head>
 <body>
-<main class="center">
+    <canvas id="snowCanvas"></canvas>
+    <header class="xmas-header">
 <h1>Lahjamysteeri! 🎄</h1>
+</header>
+<main class="xmas-content">
 
-
-<p class="hint">Joulupukki ja .....mikä?</p>
-
-
-<input id="answer" type="text" placeholder="Kirjoita vastauksesi" />
-<button class="btn" onclick="checkAnswer('noitarumpu','N','satupeli3.html')">Ok</button>
+<p class="hint">
+  Joulupukki ja .....mikä?
+</p>
+<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
+<button onclick="checkAnswer({
+  inputId: 'answerInput',
+  correctAnswer: 'noitarumpu',
+  letter: 'N',
+  nextPage: 'satupeli2.html'
+})">OK</button>
 </main>
 
 
