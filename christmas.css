@@ -223,3 +223,6 @@ user-select: none;
   border: none;
   cursor: pointer;
 }
+.modal-wrapper {
+  display: none;
+}
