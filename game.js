@@ -106,6 +106,8 @@ localStorage.setItem("lahjamysteeri_progress", JSON.stringify(progress));
 
 // === Modal system ===
 const modal = document.createElement("div");
+modal.className = "modal-wrapper"; // ← THIS WAS MISSING
+modal.style.display = "none";      // extra safety
 modal.innerHTML = `
 <div class="modal-backdrop"></div>
 <div class="modal">
