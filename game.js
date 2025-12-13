@@ -148,19 +148,24 @@ nextPageAfterSuccess = null;
 showModal("error", "Yritä uudelleen 🎅");
 }
 }
-function checkFinalAnswer({inputId, correctAnswer}) {
-//const value = document.getElementById('finalAnswer').value.trim().toLowerCase();
-//const letters = JSON.parse(localStorage.getItem('letters') || '[]').join('');
-const value = document.getElementById(inputId)?.value.trim().toLowerCase();
-if (!value) return;
-
-if (value === correctAnswer.toLowerCase())
-    {
-showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
-} else {
-showModal(`Väärin! Keräämäsi kirjaimet: ${letters}`);
-}
-}
-
 
 renderProgress();
+
+// === Final page validation ===
+function checkFinalAnswer({ inputId, finalAnswer }) {
+const value = document.getElementById(inputId)?.value.trim().toLowerCase();
+const letters = getProgress().join(" ");
+
+
+if (!value) return;
+
+
+if (value === finalAnswer.toLowerCase()) {
+showModal("success", "🎁 Oikein! Löysit lahjan paikan! 🎄");
+} else {
+showModal(
+"error",
+`❄️ Väärin vastaus. Keräämäsi kirjaimet olivat: ${letters}`
+);
+}
+}
