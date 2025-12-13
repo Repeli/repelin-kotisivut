@@ -165,7 +165,7 @@ showModal("success", "🎁 No siellähän se on! Äkkiä sieltä katsomaan!🎄"
 } else {
 showModal(
 "error",
-`❄️ Ei se siellä kyllä ole. Keräämäsi kirjaimet olivat: ${letters}`
+`❄️ Ei se siellä kyllä ole. Miettippä vielä.`
 );
 }
 }
