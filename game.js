@@ -128,7 +128,7 @@ window.location.href = nextPageAfterSuccess;
 function showModal(type, text) {
 modal.className = `modal-wrapper ${type}`;
 document.getElementById("modalTitle").textContent =
-type === "success" ? "🎄 Oikein!" : "❄️ Väärin";
+type === "success" ? "🎄 No justiinsa!" : "❄️ Eipä ollunna";
 document.getElementById("modalText").textContent = text;
 modal.style.display = "flex";
 }
@@ -161,11 +161,11 @@ if (!value) return;
 
 
 if (value === finalAnswer.toLowerCase()) {
-showModal("success", "🎁 Oikein! Löysit lahjan paikan! 🎄");
+showModal("success", "🎁 No siellähän se on! Äkkiä sieltä katsomaan!🎄");
 } else {
 showModal(
 "error",
-`❄️ Väärin vastaus. Keräämäsi kirjaimet olivat: ${letters}`
+`❄️ Ei se siellä kyllä ole. Keräämäsi kirjaimet olivat: ${letters}`
 );
 }
 }
