@@ -14,10 +14,13 @@
 </header>
 <main class="xmas-content">
 
-<p class="hint">Minnekä se lahja on piilotettu?</p>
+<p class="hint">Missä siis lahja on piilossa?</p>
 
 <input id="finalAnswer" type="text" placeholder="Kirjoitappas missä se on" />
-<button class="btn" onclick="checkFinal('Saunassa')">Ok</button>
+<button onclick="checkFinalAnswer({
+  inputId: 'finalAnswer',
+  correctAnswer: 'saunassa',
+})">OK</button>
 </main>
 
 <script src="game.js"></script>
