@@ -154,7 +154,7 @@ function checkFinalAnswer({inputId, correctAnswer}) {
 const value = document.getElementById(inputId)?.value.trim().toLowerCase();
 if (!value) return;
 
-if (value === correct.toLowerCase())
+if (value === correctAnswer.toLowerCase())
     {
 showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
 } else {
