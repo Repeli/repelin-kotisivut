@@ -87,6 +87,7 @@ showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
 showModal(`Väärin! Keräämäsi kirjaimet: ${letters}`);
 }
 }
+// === Progress handling ===
 const TOTAL_PAGES = 6; // change when needed
 
 
@@ -97,11 +98,11 @@ return JSON.parse(localStorage.getItem("lahjamysteeri_progress") || "[]");
 
 function addLetter(letter) {
 const progress = getProgress();
-if (!progress.includes(letter)) {
 progress.push(letter);
 localStorage.setItem("lahjamysteeri_progress", JSON.stringify(progress));
 }
-}
+
+
 function renderProgress() {
 const el = document.getElementById("progress");
 if (!el) return;
@@ -109,19 +110,31 @@ const count = getProgress().length;
 el.textContent = `Kirjaimia kerätty: ${count} / ${TOTAL_PAGES}`;
 }
 
+
 // === Modal system ===
 const modal = document.createElement("div");
-modal.className = "modal-wrapper"; // ← THIS WAS MISSING
-modal.style.display = "none";      // extra safety
+modal.className = "modal-wrapper";
+modal.style.display = "none";
 modal.innerHTML = `
 <div class="modal-backdrop"></div>
 <div class="modal">
 <h2 id="modalTitle"></h2>
 <p id="modalText"></p>
-<button onclick="closeModal()">OK</button>
+<button id="modalOk">OK</button>
 </div>
 `;
 document.body.appendChild(modal);
+
+
+let nextPageAfterSuccess = null;
+
+
+document.getElementById("modalOk").addEventListener("click", () => {
+modal.style.display = "none";
+if (nextPageAfterSuccess) {
+window.location.href = nextPageAfterSuccess;
+}
+});
 
 
 function showModal(type, text) {
@@ -133,11 +146,6 @@ modal.style.display = "flex";
 }
 
 
-function closeModal() {
-modal.style.display = "none";
-}
-
-
 // === Answer validation ===
 function checkAnswer({ inputId, correctAnswer, letter, nextPage }) {
 const value = document.getElementById(inputId)?.value.trim().toLowerCase();
@@ -146,9 +154,11 @@ if (!value) return;
 
 if (value === correctAnswer.toLowerCase()) {
 addLetter(letter);
-showModal("success", `No niinhän se oli! Sait kirjaimen: ${letter}`);
+nextPageAfterSuccess = nextPage;
+showModal("success", `Sait kirjaimen: ${letter}`);
 } else {
-showModal("error", "Eipä ollunna!🎅");
+nextPageAfterSuccess = null;
+showModal("error", "Yritä uudelleen 🎅");
 }
 }
 
