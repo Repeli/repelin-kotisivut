@@ -9,12 +9,17 @@
 <body>
 <main class="center">
 <h1>Lahjamysteeri! 🎄</h1>
-
+<p id="progress"></p>
 <img src="phukki.jpg" alt="pukki" width="460" height="345">
 
 
-<input id="answer" type="text" placeholder="Kirjoita vastauksesi" />
-<button class="btn" onclick="checkAnswer('Myötähäpeäpukki','P','satupeli2.html')">Ok</button>
+<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
+<button onclick="checkAnswer({
+  inputId: 'answerInput',
+  correctAnswer: 'Myötähäpeäpukki',
+  letter: 'P',
+  nextPage: 'satupeli2.html'
+})">OK</button>
 </main>
 
 
