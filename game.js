@@ -87,6 +87,7 @@ showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
 showModal(`Väärin! Keräämäsi kirjaimet: ${letters}`);
 }
 }
+// === Progress handling ===
 const TOTAL_PAGES = 6; // change when needed
 
 
@@ -101,6 +102,14 @@ if (!progress.includes(letter)) {
 progress.push(letter);
 localStorage.setItem("lahjamysteeri_progress", JSON.stringify(progress));
 }
+}
+
+
+function renderProgress() {
+const el = document.getElementById("progress");
+if (!el) return;
+const count = getProgress().length;
+el.textContent = `Kirjaimia kerätty: ${count} / ${TOTAL_PAGES}`;
 }
 
 
@@ -119,8 +128,17 @@ modal.innerHTML = `
 document.body.appendChild(modal);
 
 
-function showModal(type, text) {
+let pendingNextPage = null;
+
+
+function showModal(type, text, nextPage = null) {
+pendingNextPage = nextPage;
 modal.className = `modal-wrapper ${type}`;
+document.getElementById("modalTitle").textContent =
+type === "success" ? "🎄 Oikein!" : "❄️ Väärin";
+document.getElementById("modalText").textContent = text;
+modal.style.display = "flex";
+}`;
 document.getElementById("modalTitle").textContent =
 type === "success" ? "🎄 Oikein!" : "❄️ Väärin";
 document.getElementById("modalText").textContent = text;
@@ -130,6 +148,9 @@ modal.style.display = "flex";
 
 function closeModal() {
 modal.style.display = "none";
+if (pendingNextPage) {
+window.location.href = pendingNextPage;
+}
 }
 
 
@@ -141,9 +162,9 @@ if (!value) return;
 
 if (value === correctAnswer.toLowerCase()) {
 addLetter(letter);
-showModal("success", `No niinhän se oli! Sait kirjaimen: ${letter}`);
+showModal("success", `Sait kirjaimen: ${letter}`, nextPage);
 } else {
-showModal("error", "Eipä ollunna!🎅");
+showModal("error", "Yritä uudelleen 🎅");
 }
 }
 
