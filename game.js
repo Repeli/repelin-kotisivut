@@ -80,11 +80,11 @@ const value = document.getElementById('finalAnswer').value.trim().toLowerCase();
 const letters = JSON.parse(localStorage.getItem('letters') || '[]').join('');
 
 
-if (value === correct.toLowerCase()) {
-alert('🎉 Onneksi olkoon! Löysit lahjan!');
-localStorage.removeItem('letters');
+if (value === correct.toLowerCase())
+    {
+showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
 } else {
-alert(`Väärin! Keräämäsi kirjaimet: ${letters}`);
+showModal(`Väärin! Keräämäsi kirjaimet: ${letters}`);
 }
 }
 const TOTAL_PAGES = 6; // change when needed
@@ -140,7 +140,6 @@ if (!value) return;
 if (value === correctAnswer.toLowerCase()) {
 addLetter(letter);
 showModal("success", `No niinhän se oli! Sait kirjaimen: ${letter}`);
-setTimeout(() => (window.location.href = nextPage), 2000);
 } else {
 showModal("error", "Eipä ollunna!🎅");
 }
