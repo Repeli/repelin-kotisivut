@@ -153,7 +153,6 @@ function checkFinal(correct) {
 //const value = document.getElementById('finalAnswer').value.trim().toLowerCase();
 //const letters = JSON.parse(localStorage.getItem('letters') || '[]').join('');
 const value = document.getElementById(inputId)?.value.trim().toLowerCase();
-if (!value) return;
 if (value === correct.toLowerCase())
     {
 showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
