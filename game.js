@@ -75,18 +75,6 @@ setInterval(drawSnow, 33);
 const secretLink = document.getElementById("secretLink");
 let sparkleActive = false;
 
-function checkFinal(correct) {
-//const value = document.getElementById('finalAnswer').value.trim().toLowerCase();
-//const letters = JSON.parse(localStorage.getItem('letters') || '[]').join('');
-const value = document.getElementById(inputId)?.value.trim().toLowerCase();
-if (!value) return;
-if (value === correct.toLowerCase())
-    {
-showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
-} else {
-showModal(`Väärin! Keräämäsi kirjaimet: ${letters}`);
-}
-}
 // === Progress handling ===
 const TOTAL_PAGES = 6; // change when needed
 
@@ -159,6 +147,18 @@ showModal("success", `Sait kirjaimen: ${letter}`);
 } else {
 nextPageAfterSuccess = null;
 showModal("error", "Yritä uudelleen 🎅");
+}
+}
+function checkFinal(correct) {
+//const value = document.getElementById('finalAnswer').value.trim().toLowerCase();
+//const letters = JSON.parse(localStorage.getItem('letters') || '[]').join('');
+const value = document.getElementById(inputId)?.value.trim().toLowerCase();
+if (!value) return;
+if (value === correct.toLowerCase())
+    {
+showModal('🎉 No siellähän se! Äkkiä sieltä katsomaan!');
+} else {
+showModal(`Väärin! Keräämäsi kirjaimet: ${letters}`);
 }
 }
 
