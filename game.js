@@ -139,10 +139,10 @@ if (!value) return;
 
 if (value === correctAnswer.toLowerCase()) {
 addLetter(letter);
-showModal("success", `Sait kirjaimen: ${letter}`);
+showModal("success", `No niinhän se oli! Sait kirjaimen: ${letter}`);
 setTimeout(() => (window.location.href = nextPage), 2000);
 } else {
-showModal("error", "Yritä uudelleen 🎅");
+showModal("error", "Eipä ollunna!🎅");
 }
 }
 
