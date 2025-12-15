@@ -139,7 +139,11 @@ function checkAnswer({ inputId, correctAnswer, letter, nextPage }) {
 const value = document.getElementById(inputId)?.value.trim().toLowerCase();
 if (!value) return;
 
-if (value === correctAnswer.toLowerCase()) {
+const answers = Array.isArray(correctAnswer)
+  ? correctAnswer.map(a => a.toLowerCase())
+  : [correctAnswer.toLowerCase()];
+
+if (answers.includes(value)) {
 addLetter(letter);
 nextPageAfterSuccess = nextPage;
 showModal("success", `Sait kirjaimen: ${letter}`);
