@@ -71,6 +71,12 @@ overflow-x: hidden; /* why: prevent scroll from snowfall */
   word-break: break-word;
 }
 
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 1.5rem auto;
+}
 
 /* Content */
 .xmas-content {
