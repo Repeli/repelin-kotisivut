@@ -66,8 +66,9 @@ overflow-x: hidden; /* why: prevent scroll from snowfall */
 }
 .xmas-header h1 {
   margin: 0;
-  line-height: 1.2;
-  max-width: 100%;
+  padding: 0 1rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  word-break: break-word;
 }
 
 
@@ -310,4 +311,40 @@ user-select: none;
   .modal {
     padding: 1.25rem;
   }
+}
+.answer-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 420px;
+  margin: 2rem auto 0;
+}
+
+.answer-box input {
+  padding: 1rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 0.75rem;
+  border: none;
+  width: 100%;
+}
+
+.answer-box input:focus {
+  outline: 3px solid var(--xmas-gold);
+}
+
+.answer-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  color: white;
+
+  background: linear-gradient(135deg, var(--xmas-red), var(--xmas-green));
+  box-shadow: 0 0 15px rgba(255,255,255,0.25);
+}
+
+.answer-button:active {
+  transform: scale(0.97);
 }
