@@ -50,13 +50,24 @@ overflow-x: hidden; /* why: prevent scroll from snowfall */
 
 /* Header */
 .xmas-header {
-text-align: center;
-padding: 2rem;
-background: linear-gradient(90deg, var(--xmas-red), var(--xmas-green));
-color: var(--xmas-white);
-font-size: 2rem;
-font-weight: 700;
-box-shadow: 0 0 20px var(--xmas-red);
+  text-align: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  background: linear-gradient(90deg, var(--xmas-red), var(--xmas-green));
+  color: var(--xmas-white);
+  box-shadow: 0 0 20px var(--xmas-red);
+
+  /* Responsive typography */
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  font-weight: 700;
+
+  /* Critical fixes */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.xmas-header h1 {
+  margin: 0;
+  line-height: 1.2;
+  max-width: 100%;
 }
 
 
@@ -285,4 +296,18 @@ user-select: none;
 
 .start-button:active {
   transform: scale(0.98);
+}
+@media (max-width: 480px) {
+  .xmas-header {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .xmas-content {
+    padding: 1rem;
+  }
+
+  .modal {
+    padding: 1.25rem;
+  }
 }
