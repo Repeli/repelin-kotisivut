@@ -11,6 +11,20 @@ html, body {
   overflow-x: hidden;
 }
 
+#snowCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 :root {
 --xmas-red: #d62828;
 --xmas-green: #2b9348;
@@ -23,11 +37,7 @@ html, body {
   text-align: center;
   margin-top: 2rem;
 }
-video {
-  border-radius: 1rem;
-  max-width: 100%;
-  height: auto;
-}
+
 .hero { display: grid; gap: .75rem; padding: 3rem 0; }
 body {
 margin: 0;
@@ -209,7 +219,7 @@ user-select: none;
   background: #111827;
   border-radius: 1rem;
   padding: 2rem;
-  width: min(90%, 360px);
+  width: min(90vw, 420px);
   text-align: center;
   box-shadow: 0 0 30px rgba(255,255,255,.15);
 }
