@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lahjamysteeri!</title>
+<link rel="stylesheet" href="christmas.css" />
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+    <header class="xmas-header">
+<h1>Lahjamysteeri! 🎄</h1>
+</header>
+<main class="xmas-content">
+
+<p class="hint">
+  Mistä maasta alkuperäinen The joulukalenteri on ja minä vuonna se ilmestyi? Maa ja vuosiluku vastaukseksi.
+</p>
+<img src="julkalendar.jpg" alt="julkalendar" width="460" height="345">
+
+<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
+<button onclick="checkAnswer({
+  inputId: 'answerInput',
+  correctAnswer: ['Tanska 1991', 'tanskasta 1991'],
+  letter: 'N',
+  nextPage: 'pasipeli6.html'
+})">OK</button>
+</main>
+
+
+<script src="game.js"></script>
+</body>
+</html>
