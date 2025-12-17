@@ -16,15 +16,27 @@
 <p class="hint">
   Kenet Näsä meinaa "shoot ekana" kiväärillä?
 </p>
-<img src="nasa.jpg" alt="Näsä" width="460" height="345">
+<img src="nasa.jpg" alt="Näsä" class="responsive-image" />
 <p></p>
-<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
-<button onclick="checkAnswer({
-  inputId: 'answerInput',
-  correctAnswer: ['Toivo', 'toivon'],
-  letter: 'A',
-  nextPage: 'satupeli6.html'
-})">OK</button>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: ['toivo','toivon'],
+      letter: 'A',
+      nextPage: 'satupeli6.html'
+    })">
+      OK
+    </button>
+  </div>
+
 </main>
 
 

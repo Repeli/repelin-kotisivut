@@ -16,15 +16,27 @@
 <p class="hint">
   Maanviljelijä Olli Santanen, hänen vaimonsa Kerttu ja heidän koiransa .... mikä?
 </p>
-<img src="koira.jpg" alt="koira" width="460" height="345">
+<img src="koira.jpg" alt="koira" class="responsive-image" />
 <p></p>
-<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
-<button onclick="checkAnswer({
-  inputId: 'answerInput',
-  correctAnswer: 'vikki',
-  letter: 'S',
-  nextPage: 'satupeli4.html'
-})">OK</button>
+  <div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: 'vikki',
+      letter: 'S',
+      nextPage: 'satupeli4.html'
+    })">
+      OK
+    </button>
+  </div>
+
 </main>
 
 

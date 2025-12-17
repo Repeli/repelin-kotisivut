@@ -26,13 +26,25 @@
     allowfullscreen>
   </iframe>
 </div>
-<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
-<button onclick="checkAnswer({
-  inputId: 'answerInput',
-  correctAnswer: '24',
-  letter: 'S',
-  nextPage: 'satupeli7.html'
-})">OK</button>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: '24',
+      letter: 'S',
+      nextPage: 'satupeli7.html'
+    })">
+      OK
+    </button>
+  </div>
+
 </main>
 
 
