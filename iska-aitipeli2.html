@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lahjamysteeri!</title>
+<link rel="stylesheet" href="christmas.css" />
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+    <header class="xmas-header">
+<h1>Lahjamysteeri! 🎄</h1>
+</header>
+<main class="xmas-content">
+
+<p class="hint">
+    Mikä leivonnainen näistä raaka-aineista syntyy?
+</p>
+<ul>
+    <li>200g voita</li>
+    <li>2dl sokeria</li>
+    <li>3 kananmunaa</li>
+    <li>2tl leivinjauhetta</li>
+    <li>2tl vaniljasokeria</li>
+    <li>1dl kevytkermaa</li>
+    <li>2rkl kaakaojauhetta</li>
+</ul>
+<p></p>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: ['tiikerikakku'],
+      letter: 'A',
+      nextPage: 'iska-aitipeli3.html'
+    })">
+      OK
+    </button>
+  </div>
+
+</main>
+<script src="game.js"></script>
+</body>
+</html>

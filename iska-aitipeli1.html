@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lahjamysteeri!</title>
+<link rel="stylesheet" href="christmas.css" />
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+    <header class="xmas-header">
+<h1>Lahjamysteeri! 🎄</h1>
+</header>
+<main class="xmas-content">
+
+<img src="kerttu.jpg" alt="kerttu" class="responsive-image" />
+<p class="hint">
+    Mitä Kerttu toivoi joululahjaksi?
+</p>
+<p></p>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: ['monitoinikone', 'monitoimikone'],
+      letter: 'A',
+      nextPage: 'iska-aitipeli2.html'
+    })">
+      OK
+    </button>
+  </div>
+
+</main>
+<script src="game.js"></script>
+</body>
+</html>

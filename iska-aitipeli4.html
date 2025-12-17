@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lahjamysteeri!</title>
+<link rel="stylesheet" href="christmas.css" />
+</head>
+<body>
+    <canvas id="snowCanvas"></canvas>
+    <header class="xmas-header">
+<h1>Lahjamysteeri! 🎄</h1>
+</header>
+<main class="xmas-content">
+
+
+<img src="kuumalinja.jpg" alt="kuumalinja" class="responsive-image" />
+<p class="hint">
+    Minä vuonna joulupukin kuumalinja esitettiin ensimmäisen kerran?
+</p>
+<p></p>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: ['1991', '91'],
+      letter: 'A',
+      nextPage: 'iska-aitipeli5.html'
+    })">
+      OK
+    </button>
+  </div>
+
+</main>
+<script src="game.js"></script>
+</body>
+</html>
