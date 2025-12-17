@@ -13,22 +13,31 @@
 </header>
 <main class="xmas-content">
 
-<img src="niilo.jpg" alt="niilo" width="460" height="345">
+<img src="niilo.jpg" alt="niilo" class="responsive-image" />
 <p class="hint">
   &
 </p>
-<img src="laituri.jpg" alt="laituri" width="460" height="345">
+<img src="laituri.jpg" alt="laituri" class="responsive-image" />
 <p></p>
-<input id="answerInput" type="text" placeholder="Kirjoita vastauksesi" />
-<button onclick="checkAnswer({
-  inputId: 'answerInput',
-  correctAnswer: ['niiloponttooni', 'niilo ponttooni', 'niiloponttoni', 'niilo ponttoni'],
-  letter: 'Ä',
-  nextPage: 'pasipeli2.html'
-})">OK</button>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoita vastauksesi"
+      inputmode="text"
+      autocomplete="off"
+    />
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: ['niiloponttooni', 'niilo ponttooni', 'niiloponttoni', 'niilo ponttoni'],
+      letter: 'Ä',
+      nextPage: 'pasipeli2.html'
+    })">
+      OK
+    </button>
+  </div>
+
 </main>
-
-
 <script src="game.js"></script>
 </body>
 </html>
