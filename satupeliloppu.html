@@ -18,11 +18,22 @@
 <p>Vihjekirjaimet:</p>
 <b>U N S A A S A S</b>
 <p></p>
-<input id="finalAnswer" type="text" placeholder="Kirjoitappas missä se on" />
-<button onclick="checkFinalAnswer({
-  inputId: 'finalAnswer',
-  finalAnswer: 'saunassa',
-})">OK</button>
+<div class="answer-box">
+    <input
+      id="answerInput"
+      type="text"
+      placeholder="Kirjoitappa missä se lahja on"
+      inputmode="text"
+      autocomplete="off"
+    />
+
+    <button class="answer-button" onclick="checkAnswer({
+      inputId: 'answerInput',
+      correctAnswer: 'saunassa',
+    })">
+      OK
+    </button>
+  </div>
 </main>
 
 <script src="game.js"></script>
